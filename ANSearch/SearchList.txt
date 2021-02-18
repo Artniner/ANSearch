@@ -1,0 +1,3 @@
+baidu#https://www.baidu.com/s?wd=
+douyu#https://www.douyu.com/search/?kw=
+bilibili#https://search.bilibili.com/all?keyword=
