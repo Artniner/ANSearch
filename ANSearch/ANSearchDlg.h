@@ -28,11 +28,13 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV Ö§³Ö
 
 private:
-	CString NumTransform(int from, int to, string num);
+	CString NumTransform(int to, __int64 dec);
+	__int64 GetDec(int from, CString str);
 	int InsertChar(int step, CString &str, char c);
 	int DoSearch();
-	int AddResult(CString describe, CString result, int pos = 255);
+	int AddResult(CString key_wd, CString result, int pos = 255);
 	int GetData();
+	void DebugOut();
 
 private:
 	int window_width = 500;
