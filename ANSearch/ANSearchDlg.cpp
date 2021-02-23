@@ -252,7 +252,6 @@ void CANSearchDlg::OnEnChangeSearch()
 // 进制转换、运算
 CString CANSearchDlg::NumTransform(int to, __int64 dec) {
 	char res_char[64] = "";
-	char* err_str;
 
 	// 转换进制
 	_i64toa_s(dec, res_char, 64, to);
@@ -308,12 +307,12 @@ __int64 CANSearchDlg::GetDec(int from, CString cstr) {
 	if (str[0] == op) {
 		str.erase(0, 1);
 	}
+	if (str.length() == 0) return 0;
+
 	if (str[str.length() - 1] == op) {
 		str.erase(str.length() - 1);
 	}
-	if (str.length() == 0) {
-		return 0;
-	}
+	if (str.length() == 0) return 0;
 
 	int index = str.find(op);
 	while (index != string::npos) {
@@ -442,7 +441,8 @@ int CANSearchDlg::GetData()
 		CString url_t;
 		AfxExtractSubString(key_wd_t, (LPCTSTR)str_line, 0, '#');
 		AfxExtractSubString(url_t, (LPCTSTR)str_line, 1, '#');
-		key_wd.insert(key_wd.begin(), key_wd_t);
+		//key_wd.insert(key_wd.begin(), key_wd_t);
+		key_wd.push_back(key_wd_t);
 		url[key_wd[0]] = url_t;
 	}
 
