@@ -1,3 +1,6 @@
-baidu#https://www.baidu.com/s?wd=
-douyu#https://www.douyu.com/search/?kw=
-bilibili#https://search.bilibili.com/all?keyword=
+baidu#https://www.baidu.com/s?wd=%s
+baiduImage#https://www.baidu.com/s?wd=%s
+baiduTest#https://www.baidu.com/s?wd=%s
+douyu#https://www.douyu.com/search/?kw=%s
+bilibili#https://search.bilibili.com/all?keyword=%s
+file#D:\Study\MFC\ANSearch\Debug\%s

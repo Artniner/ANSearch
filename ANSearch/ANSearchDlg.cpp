@@ -396,6 +396,8 @@ int CANSearchDlg::DoSearch()
 	AfxExtractSubString(key_wd_txt, (LPCTSTR)result, 0, ':');
 	AfxExtractSubString(content, (LPCTSTR)result, 1, ':');
 
+	if (key_wd_txt.Trim() == "BIN" || key_wd_txt.Trim() == "OCT" || key_wd_txt.Trim() == "DEC" || key_wd_txt.Trim() == "HEX") return ret;
+
 	CString url_t = url[key_wd_txt.Trim()];
 	url_t.Replace(_T("%s"), content.Trim());
 	ShellExecute(0, NULL, url_t, NULL, NULL, SW_SHOWDEFAULT);
@@ -443,7 +445,7 @@ int CANSearchDlg::GetData()
 		AfxExtractSubString(url_t, (LPCTSTR)str_line, 1, '#');
 		//key_wd.insert(key_wd.begin(), key_wd_t);
 		key_wd.push_back(key_wd_t);
-		url[key_wd[0]] = url_t;
+		url[key_wd_t] = url_t;
 	}
 
 	file.Close();
